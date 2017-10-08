@@ -19,10 +19,10 @@
           <div class="container">
             <div class="jumbotron">
               <h1>Let's Have Fun!</h1>
-              <button class="panel-button" data-panelid="panel1">#btn1</button>
-              <button class="panel-button" data-panelid="panel2">#btn2</button>
-              <button class="panel-button" data-panelid="panel3">#btn3</button>
-              <button class="panel-button" data-panelid="panel4">#btn4</button>
+              <button id="btn1" >#btn1</button>
+              <button id="btn1" >#btn2</button>
+              <button id="btn1" >#btn3</button>
+              <button id="btn1" >#btn4</button>
             </div>
       
           <div class="row">
@@ -69,23 +69,12 @@
         // jQuery goes inside of document ready funtion
         // short way of writing document.ready $(function() {});
         $(function() {
-          // selector # css, .hide(miliseconds)
-          // $("#panel1").hide(300).show(1000).hide(300).show(1000);
-          // // slides up and waits then comes down 1000 milisec
-          // $("#panel1").slideUp(1000).delay(1000).slideDown(1000);
-          // $("#panel1").fadeOut(1000).delay(1000).slideDown(1000);
-          // $("#panel1").toggle(1000).toggle(1000);
-    
-          // remember to put .css() inside of {} and " for color "
-          // for font-weight need to camelCase or 'font-weight'
-          // $("#panel1").css({  /* have enter any time curly braces js objectify*/
-          //   color: "red", 
-          //   fontWeight: 'bold',
-          //   display: 'none' /* when doesn't want to see it*/
-          // });
-    
-          $("#panel1").hide(); /*hide it*/
-          $("#panel2").css({opacity:'0.5'}); /* make it bit transparent*/
+          // change html text using 'text'.html()
+          $('#btn1').html('my button');
+          // gets rid of all elements only text 'my new panel' displays
+          $('#panel1').html('my new panel');
+
+
         });
       </script>
     
