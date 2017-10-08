@@ -20,9 +20,9 @@
             <div class="jumbotron">
               <h1>Let's Have Fun!</h1>
               <button id="btn1" >#btn1</button>
-              <button id="btn1" >#btn2</button>
-              <button id="btn1" >#btn3</button>
-              <button id="btn1" >#btn4</button>
+              <button id="btn2" >#btn2</button>
+              <button id="btn3" >#btn3</button>
+              <button id="btn4" >#btn4</button>
             </div>
       
           <div class="row">
@@ -77,9 +77,36 @@
           
           // Listen to the 'click' event and run callback function
           //  when btn1 clicked toggle panel1
+          // $('#btn1').on('click', function() {
+            // toggle show if hidden vs. hide if shown
+            // $('#panel1').toggle();
+            // $('#panel1').slideToggle(200); /* nice animation feel slide */
+
+          // When I am on the panel1 hide
+          // $('#panel1').on('click', function() {
+          //   $('#panel1').slideToggle(200);
+
+          // $('#panel1').on('click', function() {
+          //   $('#panel1').fadeOut(200);
+
           $('#btn1').on('click', function() {
-            // toggle show & hide
-            $('#panel1').toggle();
+            $('#panel1').fadeOut(200);
+
+          });
+
+          $('#btn2').on('click', function() {
+            $('#panel2').fadeOut(200);
+
+          });
+
+          $('#btn3').on('click', function() {
+            $('#panel3').fadeOut(200);
+
+          });
+
+          $('#btn4').on('click', function() {
+            $('#panel4').fadeOut(200);
+
           });
 
 
