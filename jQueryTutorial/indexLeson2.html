@@ -70,9 +70,18 @@
         // short way of writing document.ready $(function() {});
         $(function() {
           // change html text using 'text'.html()
-          $('#btn1').html('my button');
+          // $('#btn1').html('my button');
+          
           // gets rid of all elements only text 'my new panel' displays
-          $('#panel1').html('my new panel');
+          // $('#panel1').html('my new panel <strong>wow</strong>');
+          
+          // Listen to the 'click' event and run callback function
+          //  when btn1 clicked toggle panel1
+          $('#btn1').on('click', function() {
+            // toggle show & hide
+            $('#panel1').toggle();
+          });
+
 
 
         });
