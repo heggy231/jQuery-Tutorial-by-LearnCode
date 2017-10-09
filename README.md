@@ -21,5 +21,17 @@
     	});
 
 ## Lesson 2: 
+  * Eventlistener 'click' in js
+  	ex) $(#btn1).on('click', function() {
+  			// do something when click happens
+  			$(#panel1).fadeIn(200);
+  		});
+  * using .html to change text on the page
+  * .slideToggle(200); animation when 'click' event -> triggers callback
+  * .fadeIn(200) .fadeOut(200) use number always in parenthesis
+  * .find('.panel-body') to search through html doc
+  * 'hover' effect  .on('hover', function() { * do something * }); 
+  *  chain methods
+     ex) $("#panel1").slideUp(1000).delay(1000).slideDown(1000);
 
-## Lesson 3: 
+## Lesson 3:
