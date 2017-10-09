@@ -35,4 +35,18 @@
      ex) $("#panel1").slideUp(1000).delay(1000).slideDown(1000);
 
 ## Lesson 3:
-  * Refactor repeating codes
+  * Refactor to eliminate repeating codes 
+  * Usage of css class to select multiple elements
+    note: .panel-button is class here
+    ex) $('.panel-button').on('click', function() {
+          // 'data-panelid' is custom attribute
+          var panelId = $(this).attr('data-panelid');
+          // inserts var content inside of selected panel body
+          $('#'+panelId+' .panel-body').html(content);
+        });
+  * See which panel was clicked on using
+    ex) var panelId = $(this).attr('id') 
+        alert(panelClass);
+    note: this points to left of dot rule
+        - note: '.panel-button' was clicked and triggers id to show
+
