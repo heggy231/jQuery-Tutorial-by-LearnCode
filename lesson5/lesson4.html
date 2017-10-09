@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style media="screen">
+    .special {
+      color: blue;
+    }
+  </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>one</li>
+      <li class="special">two</li>
+      <li>three</li>
+      <li>
+        <ul class="sublist">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+      </li>
+    </ul>
+
+    <script type = "application/javascript" src="resources/js/libs/jquery.min.js"></script>
+    <script>
+      $(function() {
+        // $('li').on('click', function(){
+          // when click on li next li gets hidden note: once two is hidden
+          //  even though you click one again three doesn't get hidden since two is still there.
+          // $(this).next().hide(); 
+
+          // $(this).next().remove(); /* gets removed and three is gone after 2nd click on One*/
+          // $(this).siblings().remove(); /* only one you click on; only one that stays */
+
+          // I do'nt become special blue but all my siblings gets special
+          // $(this).siblings().addClass('special'); /* currently spcial class gets to be blue! */
+
+          // make sure if I have special class, remove first and give my siblings special class
+          // $(this).removeClass('special');
+          // $(this).siblings().addClass('special');
+
+          // add special class to parents which means all gets it
+          // $(this).parent().addClass('special');
+
+          // .closest looks closest('.list') and add special
+          // $(this).closest('.list').addClass('special');
+
+        // learn filtering using .find() 
+        // when I click on list class (any element under .list) > find all li within list block
+        // $('.list').on('click', function() {
+          // $(this).find('li').addClass('special');
+
+          // filter just first element
+          // $(this).find('li').filter(':first').addClass('special');
+
+          // filter to remove
+          //  inside of .list > find all li > filter down to .special only > remove that
+          // $(this).find('li').filter('.special').remove();
+          // or you can simply use .find('.special').remove() works as well
+          // $(this).find('.special').remove();  /* delets only 'two' .special class under .list element */
+
+          // note .find() is better but here is another way to search DOM but not efficient
+          // $('.special').remove(); /* search entire page*/
+          
+        // when element li I clicked on; I want to alert 'special'
+        // easy case, anytime we click .special => alert special
+        // $('.special').on('click', function() {
+        //     alert('special');
+        // });
+        
+        // any element under li, first hide, if not special > alert
+        // $('li').on('click', function() {
+        //   $(this).hide();
+        //   if(!$(this).is('.special')) {
+        //     alert('not special');
+        //   }
+        // });
+
+        // put event listener on just sublist of li
+        // $('.sublist li').on('click', function() {
+        //   $(this).hide();
+        // });
+
+        // I want to different things to all li but something special for li .special (hide if on .sublist)
+        $('li').on('click',function() {
+          // for all li
+          console.log('clicked li');
+          // only when .sublist li clicked then hide
+          if($(this).parent().is('.sublist')) {
+            $(this).hide();
+          }
+        });
+
+      });
+    
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<!-- https://github.com/kaileeagray/learn_code_academy_jquery/tree/master/tutorial4 -->

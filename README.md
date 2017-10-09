@@ -89,3 +89,8 @@
     hides next element from viewing currently clicked on vs.
     removes next element
   * .find('li').filter(':first').addClass('special') filters first li
+
+
+## Lesson 5: Building a jQuery Tab Panel Widget
+- Requirement1: active panel tab get hilighted
+- Requirement2: active panel content gets displayed
