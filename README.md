@@ -50,3 +50,43 @@
     note: this points to left of dot rule
         - note: '.panel-button' was clicked and triggers id to show
 
+## Lesson 4:
+  * DOM transversal with jQuery (cutting down the complication)
+  * jQuery is really made for DOM transversal
+  * In console: $('li') shows all li
+      $('li').first()
+      $('li').last() // last one on the entire page; not last on list
+      $('li').first().hide() // hide first li
+      $('li').first().show()
+      $('li').eq(0) // get the first index; first one
+      $('li').eq(1) // get the 2nd index; 2nd one
+      $('ul:first').children() // get first child 
+      $('ul:first').children().hide()
+      $('li:first').siblings() // all direct siblings not including itself
+      $('li:first').parent() // ul that is parent of li
+      $('li').eq(4) // 1 in this ex
+      $('li').eq(4).parent() // ul.sublist 
+      $('li').eq(4).parent().parent().parent() // chaining upto ul.list
+      $('li').eq(4).parent().parent().prev() // 3 .prev() immediate sibling 
+      $('li').eq(4).parent().parent().prev().prev() // 2 prev of prev sibling
+      $('li').eq(4).parent().parent().prev().prev().next() // back to 3, next sibling
+      $('li').first().next() // 2, same as $('li').eq(4).parent().parent().prev().prev()
+      $('li').eq(1) // 2
+  * Usecase for using transversal DOM
+    - $(this).next().hide(); <= .on('click') of li next li get hidden
+    - $(this).next().remove(); <= work if you want to keep deleting
+  * event listener for li include nested li and its parent li.  assign class for nested li group to have special function.  
+    ex) if($(this).parent().is('.sublist')) {
+          $(this).hide(); /* 'this' >> li */
+        }
+
+  * .filter('.special') to filer only .special class and chain to .remove()
+  * .find('li').addClass('.special') to element
+    result: Before <li>
+            After  <li class="special> 
+  * .closest('.list') looks for its closest class .list
+  * $(this).siblings().addClass('special') > result: all my siblings gets special class except me.
+  * .next().hide() vs .next().remove()
+    hides next element from viewing currently clicked on vs.
+    removes next element
+  * .find('li').filter(':first').addClass('special') filters first li
