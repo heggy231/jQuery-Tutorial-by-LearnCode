@@ -35,3 +35,4 @@
      ex) $("#panel1").slideUp(1000).delay(1000).slideDown(1000);
 
 ## Lesson 3:
+  * Refactor repeating codes
