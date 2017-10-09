@@ -36,7 +36,7 @@
 
 ## Lesson 3:
   * Refactor to eliminate repeating codes 
-  * Usage of css class to select multiple elements
+  * Usecase of css class to select multiple elements
     note: .panel-button is class here
     ex) $('.panel-button').on('click', function() {
           // 'data-panelid' is custom attribute
@@ -63,8 +63,8 @@
       $('ul:first').children() // get first child 
       $('ul:first').children().hide()
       $('li:first').siblings() // all direct siblings not including itself
-      $('li:first').parent() // ul that is parent of li
-      $('li').eq(4) // 1 in this ex
+      $('li:first').parent() // result: ul since ul is parent of li in this ex
+      $('li').eq(4) // 1 in this ex (array index starts with 0)
       $('li').eq(4).parent() // ul.sublist 
       $('li').eq(4).parent().parent().parent() // chaining upto ul.list
       $('li').eq(4).parent().parent().prev() // 3 .prev() immediate sibling 
@@ -72,14 +72,13 @@
       $('li').eq(4).parent().parent().prev().prev().next() // back to 3, next sibling
       $('li').first().next() // 2, same as $('li').eq(4).parent().parent().prev().prev()
       $('li').eq(1) // 2
-  * Usecase for using transversal DOM
+  * Usecase for using traversal DOM
     - $(this).next().hide(); <= .on('click') of li next li get hidden
     - $(this).next().remove(); <= work if you want to keep deleting
   * event listener for li include nested li and its parent li.  assign class for nested li group to have special function.  
     ex) if($(this).parent().is('.sublist')) {
           $(this).hide(); /* 'this' >> li */
         }
-
   * .filter('.special') to filer only .special class and chain to .remove()
   * .find('li').addClass('.special') to element
     result: Before <li>
